@@ -1,3 +1,5 @@
+
+
 theme_ja <- function () {
   font <- "Helvetica"
   ggplot2::theme(
@@ -11,7 +13,7 @@ theme_ja <- function () {
     legend.key = ggplot2::element_blank(),
     legend.text = ggplot2::element_text(family = font, size = 18, color = "#222222"),
     axis.title = ggplot2::element_blank(),
-    axis.text = ggplot2::element_text(family = font, size = 18,color = "#222222"),
+    axis.text = ggplot2::element_text(family = font, size = 18, color = "#222222"),
     axis.text.x = ggplot2::element_text(margin = ggplot2::margin(5, b = 10)),
     axis.ticks = ggplot2::element_blank(),
     axis.line = ggplot2::element_blank(),
@@ -23,3 +25,5 @@ theme_ja <- function () {
     strip.text = ggplot2::element_text(size = 22, hjust = 0)
   )
 }
+
+

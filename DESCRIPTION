@@ -8,3 +8,6 @@ Description: Style guide for ggplot graphics.
 License: MIT
 Encoding: UTF-8
 LazyData: true
+Suggests: testthat
+Imports:
+  ggplot2
