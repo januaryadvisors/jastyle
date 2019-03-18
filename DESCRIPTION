@@ -1,0 +1,10 @@
+Package: jastyle
+Type: Package
+Title: January Advisors styles for R graphics
+Version: 0.1.0
+Author: David McClendon
+Maintainer: David McClendon <david@januaryadvisors.com>
+Description: Style guide for ggplot graphics.
+License: MIT
+Encoding: UTF-8
+LazyData: true
