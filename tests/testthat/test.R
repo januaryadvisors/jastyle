@@ -1,8 +1,8 @@
-library(theme_ja)
+library(jastyle)
 library(ggplot2)
 
 
-
+context("test style elements are implemented")
 test_that("test title size is 28", {
   
   test_plot_1 <- ggplot(mtcars) +
