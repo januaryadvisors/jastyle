@@ -1,7 +1,8 @@
 
 
-theme_ja <- function () {
-  font <- "Helvetica"
+
+ja_base_theme <- function () {
+  font <- "Roboto Condensed"
   ggplot2::theme(
     plot.title = ggplot2::element_text(family = font,size = 28, face = "bold", color = "#222222"),
     plot.subtitle = ggplot2::element_text(family = font, size = 22, margin = ggplot2::margin(9, 0, 9, 0)),
@@ -18,12 +19,28 @@ theme_ja <- function () {
     axis.ticks = ggplot2::element_blank(),
     axis.line = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
-    panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb"),
+    #panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb"),
     panel.grid.major.x = ggplot2::element_blank(),
     panel.background = ggplot2::element_blank(),
     strip.background = ggplot2::element_rect(fill = "white"),
     strip.text = ggplot2::element_text(size = 22, hjust = 0)
   )
 }
+
+
+ja_scatter_theme <- function() {
+  font <- "Roboto Condensed"
+  ja_base_theme() %+replace% 
+    theme(
+      panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb"),
+      panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb"),
+      axis.title = ggplot2::element_text(family = font, size = 18, color = "#222222", face="bold")
+    )
+}
+
+
+
+
+
 
 
