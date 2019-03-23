@@ -1,10 +1,9 @@
 
 
-
 ja_base_theme <- function () {
   font <- "Roboto Condensed"
   ggplot2::theme(
-    plot.title = ggplot2::element_text(family = font,size = 28, face = "bold", color = "#222222"),
+    plot.title = ggplot2::element_text(family = font,size = 32, face = "bold", color = "#081F30"),
     plot.subtitle = ggplot2::element_text(family = font, size = 22, margin = ggplot2::margin(9, 0, 9, 0)),
     plot.caption = ggplot2::element_blank(),
     legend.position = "top",
@@ -12,9 +11,9 @@ ja_base_theme <- function () {
     legend.background = ggplot2::element_blank(),
     legend.title = ggplot2::element_blank(),
     legend.key = ggplot2::element_blank(),
-    legend.text = ggplot2::element_text(family = font, size = 18, color = "#222222"),
+    legend.text = ggplot2::element_text(family = font, size = 18, color = "#081F30"),
     axis.title = ggplot2::element_blank(),
-    axis.text = ggplot2::element_text(family = font, size = 18, color = "#222222"),
+    axis.text = ggplot2::element_text(family = font, size = 18, color = "#081F30"),
     axis.text.x = ggplot2::element_text(margin = ggplot2::margin(5, b = 10)),
     axis.ticks = ggplot2::element_blank(),
     axis.line = ggplot2::element_blank(),
@@ -34,7 +33,7 @@ ja_scatter_theme <- function() {
     theme(
       panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb"),
       panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb"),
-      axis.title = ggplot2::element_text(family = font, size = 18, color = "#222222", face="bold")
+      axis.title = ggplot2::element_text(family = font, size = 18, color = "#081F30", face="bold")
     )
 }
 
