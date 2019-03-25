@@ -9,6 +9,7 @@ ja_colors <- c(
   `yellow`     = "#F4E649",
   `lightgray` = "#cccccc")
 
+#For palettes
 ja_cols <- function(...) {
   cols <- c(...)
   
@@ -18,6 +19,17 @@ ja_cols <- function(...) {
   ja_colors[cols]
 }
 
+#For manual color/fill scales
+ja_hex <- function(...) {
+  cols <- c(...)
+  
+  if (is.null(cols))
+    return (paste0("Choose a color"))
+  
+  paste0(ja_colors[cols])
+}
+
+#Define palettes here
 ja_palettes <- list(
   `main`  = ja_cols("blue", "orange", "green"),
   
