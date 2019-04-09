@@ -11,7 +11,15 @@
 #' theme_ja()
 
 theme_ja <- function () {
-  font <- "Roboto Condensed"
+  #Check if font install; if not, use "Helvetica" and issue an error message
+  checkfont <- system("fc-list | grep 'Roboto Condensed'", intern=T)
+  font_na <- length(checkfont)==0
+  if(font_na) warning("'Roboto Condensed' is not installed. To install, run install_font() or 
+                      download from https://fonts.google.com/specimen/Roboto+Condensed and install on your system")
+  
+  #Set font
+  font <- ifelse(font_na, "Helvetica", "Roboto Condensed")
+  
   ggplot2::theme(
     #Text format:
     #This sets the font, size, type and colour of text for the chart's title
