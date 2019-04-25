@@ -14,8 +14,8 @@ theme_ja <- function () {
   #Check if font install; if not, use "Helvetica" and issue an error message
   checkfont <- system("fc-list | grep 'Roboto Condensed'", intern=T)
   font_na <- length(checkfont)==0
-  if(font_na) warning("'Roboto Condensed' is not installed. To install, run install_font() or 
-                      download from https://fonts.google.com/specimen/Roboto+Condensed and install on your system")
+  if(font_na) warning("'Roboto Condensed' is not installed. Download from 
+                      https://fonts.google.com/specimen/Roboto+Condensed and install on your system")
   
   #Set font
   font <- ifelse(font_na, "Helvetica", "Roboto Condensed")
@@ -49,9 +49,9 @@ theme_ja <- function () {
     axis.line = ggplot2::element_blank(),
     
     #Grid lines
-    #This removes all gridlines. In many cases you will want to change this to add y and x gridlines. The cookbook shows you examples for doing so
-    panel.grid.minor = ggplot2::element_blank(),
-    panel.grid.major = ggplot2::element_blank(),
+    #sets gridlines. In many cases you will want to remove y and x gridlines. 
+    panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb"),
+    panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb"),
     
     #Blank background
     #This sets the panel background as blank, removing the standard grey ggplot background colour from the plot
@@ -63,15 +63,59 @@ theme_ja <- function () {
   )
 }
 
-
-theme_ja_scatter <- function() {
-  font <- "Roboto Condensed"
-  theme_ja() %+replace% 
-    theme(
-      panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb"),
-      panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb")
-    )
+ja_font <- function () {
+  #Check if font install; if not, use "Helvetica" and issue an error message
+  checkfont <- system("fc-list | grep 'Roboto Condensed'", intern=T)
+  font_na <- length(checkfont)==0
+  if(font_na) warning("'Roboto Condensed' is not installed. Download from 
+                      https://fonts.google.com/specimen/Roboto+Condensed and install on your system")
+  
+  #Set font
+  font <- ifelse(font_na, "Helvetica", "Roboto Condensed")
+  return(font)
 }
+
+#helper function to determine whether system is Mac or Windows
+# get_os <- function() {
+#   if (.Platform$OS.type == "windows") { 
+#     "win"
+#   } else if (Sys.info()["sysname"] == "Darwin") {
+#     "mac" 
+#   } else if (.Platform$OS.type == "unix") { 
+#     "unix"
+#   } else {
+#     stop("Unknown OS")
+#   }
+# }
+
+#Installs Roboto Condensed from data folder
+# install_jafont <- function() {
+#   font_folder <- file.path(system.file("data", package = 'jastyle'),"East_Sea_Dokdo/")
+#   
+#   if (get_os()=="mac") {
+#     system(paste0("cp ", font_folder, "*.ttf ~/Library/Fonts/"))
+#   } else {
+#     "Download font here[https://fonts.google.com/specimen/Roboto+Condensed] and install on your system."
+#   }
+# }
+
+
+# theme_ja_scatter <- function() {
+#   #Check if font install; if not, use "Helvetica" and issue an error message
+#   checkfont <- system("fc-list | grep 'Roboto Condensed'", intern=T)
+#   font_na <- length(checkfont)==0
+#   if(font_na) warning("'Roboto Condensed' is not installed. To install on Mac, run install_jafont() or 
+#                       download from https://fonts.google.com/specimen/Roboto+Condensed and install on your system")
+#   
+#   #Set font
+#   font <- ifelse(font_na, "Helvetica", "Roboto Condensed")
+#   
+#   theme_ja() %+replace% 
+#     theme(
+#       panel.grid.major.y = ggplot2::element_line(color = "#cbcbcb"),
+#       panel.grid.major.x = ggplot2::element_line(color = "#cbcbcb")
+#     )
+# }
 
 
 

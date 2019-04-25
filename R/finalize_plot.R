@@ -17,7 +17,7 @@ create_footer <- function (source_name, logo_image_path) {
   #Check font
   checkfont <- system("fc-list | grep 'Roboto Condensed'", intern=T)
   font_na <- length(checkfont)==0
-  if(font_na) warning("'Roboto Condensed' is not installed. To install, run install_font() or 
+  if(font_na) warning("'Roboto Condensed' is not installed. To install on Mac, run install_jafont() or 
                       download from https://fonts.google.com/specimen/Roboto+Condensed and install on your system")
   #Set font
   font <- ifelse(font_na, "Helvetica", "Roboto Condensed")
@@ -33,8 +33,8 @@ create_footer <- function (source_name, logo_image_path) {
 
 #' Arrange alignment and save ggplot chart
 #'
-#' Running this function will save your plot with the correct guidelines for publication for a BBC News graphic.
-#' It will left align your title, subtitle and source, add the BBC blocks at the bottom right and save it to your specified location.
+#' Running this function will save your plot with the correct guidelines for publication for a January Advisors graphic.
+#' It will left align your title, subtitle and source, add the January Advisors logo at the bottom right and save it to your specified location.
 #' @param plot_name The variable name of the plot you have created that you want to format and save
 #' @param source_name The text you want to come after the text 'Source:' in the bottom left hand side of your side
 #' @param save_filepath Exact filepath that you want the plot to be saved to

@@ -65,6 +65,13 @@ ja_colors <- c(
   
   )
 
+ja_view_colors <- function(...){
+  library(png)
+  img <- readPNG(file.path(system.file("data", package = 'jastyle'),"jastyle_colors.png"))
+  while (!is.null(dev.list()))  dev.off()
+  grid::grid.raster(img)
+}
+
 #For palettes
 ja_cols <- function(...) {
   cols <- c(...)
@@ -93,11 +100,11 @@ ja_palettes <- list(
   
   `hot`   = ja_cols("yellow", "orange", "red"),
   
-  `mixed` = ja_cols("blue", "orange", "green", "purple", "yellow", "red"),
+  `mixed` = ja_cols("blue", "green", "orange", "yellow", "red", "purple"),
   
   `gray`  = ja_cols("lightgray", "bluegray"),
   
-  `political` = ja_cols("blue", "red", "green")
+  `political` = ja_cols("blue", "red")
 )
 
 
@@ -108,6 +115,7 @@ ja_pal <- function(palette = "main", reverse = FALSE, ...) {
   
   colorRampPalette(pal, ...)
 }
+
 
 scale_color_ja <- function(palette = "main", discrete = TRUE, reverse = FALSE, ...) {
   pal <- ja_pal(palette = palette, reverse = reverse)
