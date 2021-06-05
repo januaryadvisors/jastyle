@@ -15,5 +15,6 @@ Imports:
   grid,
   ggpubr,
   dplyr,
-  data.table
-RoxygenNote: 6.1.1
+  data.table,
+  highcharter
+RoxygenNote: 7.1.1

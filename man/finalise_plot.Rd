@@ -4,11 +4,15 @@
 \alias{finalise_plot}
 \title{Arrange alignment and save ggplot chart}
 \usage{
-finalise_plot(plot_name, source_name,
+finalise_plot(
+  plot_name,
+  source_name,
   save_filepath = file.path(Sys.getenv("TMPDIR"), "tmp-nc.png"),
-  width_pixels = 640, height_pixels = 450,
+  width_pixels = 640,
+  height_pixels = 450,
   logo_image_path = file.path(system.file("data", package = "jastyle"),
-  "ja-logo-horizontal.png"))
+    "ja-logo-horizontal.png")
+)
 }
 \arguments{
 \item{plot_name}{The variable name of the plot you have created that you want to format and save}
@@ -28,8 +32,8 @@ which needs to be a PNG file - defaults to JA color logo that sits within the da
 (Invisibly) an updated ggplot object.
 }
 \description{
-Running this function will save your plot with the correct guidelines for publication for a BBC News graphic.
-It will left align your title, subtitle and source, add the BBC blocks at the bottom right and save it to your specified location.
+Running this function will save your plot with the correct guidelines for publication for a January Advisors graphic.
+It will left align your title, subtitle and source, add the January Advisors logo at the bottom right and save it to your specified location.
 }
 \examples{
 finalise_plot(plot_name = myplot,

@@ -1,0 +1,82 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# jastyle
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of jastyle is to ...
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("januaryadvisors/jastyle")
+```
+## Check font
+
+You need to have Roboto Condensed installed. Check your system to see if you do. If not, go here and download it [here](https://fonts.google.com/specimen/Roboto+Condensed).
+```{r check font}
+library(jastyle)
+ja_font()
+```
+
+## Use ggplot theme_ja()
+
+```{r cars}
+library(tidyverse)
+ggplot(iris) +
+  geom_point(aes(x=Sepal.Length, y=Sepal.Width, color=Species), size=3) +
+  ggtitle("Title here", subtitle = "Subtitle here") +
+  labs(caption = "Source: Add source here.") +
+  theme_ja()
+```
+
+
+## Use highcharter ja_hc_theme()
+```{r}
+library(highcharter)
+highcharter::hchart(iris, "scatter", hcaes(Sepal.Length, Sepal.Width, color=Species)) %>% 
+  hc_title(text = "Title here") %>% 
+  hc_subtitle(text = "Subtitle here.") %>% 
+  hc_caption(text = "<strong>Source</strong>: Source here.") %>% 
+  hc_add_theme(ja_hc_theme())
+```
+
+
+## Custom ja_colors
+### View colors
+```{r}
+
+ja_view_colors()
+
+```
+
+### Apply manual color palette
+```{r}
+ggplot(iris) +
+  geom_point(aes(x=Sepal.Length, y=Sepal.Width, color=Species), size=3) +
+  ggtitle("Title here", subtitle = "Subtitle here") +
+  labs(caption = "Source: Add source here.") +
+  scale_color_manual(
+    values = c(ja_hex("blue"), ja_hex("orange"), ja_hex("green"))
+  ) +
+  theme_ja()
+```
+
+
