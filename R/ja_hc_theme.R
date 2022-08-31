@@ -7,8 +7,8 @@
 #' highcharter::hchart(iris, "scatter", hcaes(Sepal.Length, Sepal.Width, group=Species)) %>% 
 #' hc_add_theme(ja_hc_theme())
 
-ja_hc_theme <- function(base_size="12px", base_family="Roboto Condensed", title_size="22px", title_weight = "700", subtitle_size="14px", subtitle_weight = "400",
-                        credit_size="10px", header_align = "left", legend_align = "center", credits_align = "left", 
+ja_hc_theme <- function(base_size="14px", base_family="Roboto Condensed", title_size="24px", title_weight = "700", subtitle_size="16px", subtitle_weight = "400",
+                        credit_size="10px", header_align = "left", legend_align = "center", credits_align = "left", legend_position = "top",
                         chart_colors=c("#319CF4", "#FF8B00", "#081F30", "#13C18D", "#F4E649", "#C11344", "#A71183"), ...) {
   
   highcharter::hc_theme_merge(
@@ -39,20 +39,22 @@ ja_hc_theme <- function(base_size="12px", base_family="Roboto Condensed", title_
                                           align = header_align),
                           legend = list(align = legend_align,
                                         style = list(fontFamily = base_family,
-                                                     
+                                                     fontSize = base_size,
                                                      color="white"),
                                         itemStyle = list(fontFamily = base_family,
+                                                         fontSize = base_size,
                                                          fontWeight="regular",
                                                          color = '#2d2d2d'),
                                         itemHoverStyle = list(color = 'gray'),
-                                        verticalAlign = "top"),
+                                        verticalAlign = legend_position),
                           credits = list(style = list(color = "#2d2d2d",
                                                       fontSize = credit_size),
                                          align = credits_align),
                           xAxis = list(labels =list(style = list(fontFamily = base_family,
+                                                                 fontSize = base_size,
                                                                  color="#2d2d2d")),
                                        title = list(style = list(color = "#2d2d2d",
-                                                                 fontSize = "12px",
+                                                                 fontSize = base_size,
                                                                  color="#2d2d2d",
                                                                  fontWeight="500")),
                                        lineColor = '#2d2d2d',
@@ -62,9 +64,10 @@ ja_hc_theme <- function(base_size="12px", base_family="Roboto Condensed", title_
                                        tickColor = 'rgba(219,220,221,1)',
                                        tickWidth = 1),
                           yAxis = list(labels =list(style = list(fontFamily = base_family,
+                                                                 fontSize = base_size,
                                                                  color="#2d2d2d")),
                                        title = list(style = list(color = "#2d2d2d",
-                                                                 fontSize = "12px",
+                                                                 fontSize = base_size,
                                                                  color="#2d2d2d",
                                                                  fontWeight="500")),
                                        gridLineWidth = 1,

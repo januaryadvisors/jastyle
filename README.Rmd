@@ -44,7 +44,7 @@ ggplot(iris) +
   geom_point(aes(x=Sepal.Length, y=Sepal.Width, color=Species), size=3) +
   ggtitle("Title here", subtitle = "Subtitle here") +
   labs(caption = "Source: Add source here.") +
-  theme_ja()
+  theme_ja() 
 ```
 
 
