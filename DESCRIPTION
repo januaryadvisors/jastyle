@@ -11,10 +11,6 @@ LazyData: true
 Suggests: testthat
 Imports:
   ggplot2,
-  png,
-  grid,
-  ggpubr,
   dplyr,
-  data.table,
   highcharter
 RoxygenNote: 7.1.1
