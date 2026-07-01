@@ -49,12 +49,12 @@ ggplot(iris) +
 
 
 ## Use highcharter ja_hc_theme()
-```{r}
+```{r, out.width = 800, screenshot.opts = list(vwidth = 800, vheight = 500)}
 library(highcharter)
-highcharter::hchart(iris, "scatter", hcaes(Sepal.Length, Sepal.Width, color=Species)) %>% 
-  hc_title(text = "Title here") %>% 
-  hc_subtitle(text = "Subtitle here.") %>% 
-  hc_caption(text = "<strong>Source</strong>: Source here.") %>% 
+highcharter::hchart(iris, "scatter", hcaes(Sepal.Length, Sepal.Width, color=Species)) %>%
+  hc_title(text = "Title here") %>%
+  hc_subtitle(text = "Subtitle here.") %>%
+  hc_caption(text = "<strong>Source</strong>: Source here.") %>%
   hc_add_theme(ja_hc_theme())
 ```
 
