@@ -18,30 +18,33 @@ You can install the development version from
 devtools::install_github("januaryadvisors/jastyle")
 ```
 
-## Check font
+## Font
 
-You need to have Roboto Condensed installed. Check your system to see if
-you do. If not, go here and download it
-[here](https://fonts.google.com/specimen/Roboto+Condensed).
+The package uses [Onest](https://fonts.google.com/specimen/Onest) as its
+base font. Onest is registered automatically on package load via
+`sysfonts::font_add_google("Onest")` and `showtext::showtext_auto()`, so
+no manual install is needed.
 
 ``` r
 library(jastyle)
 ja_font()
-#> [1] "Roboto Condensed"
+#> [1] "Onest"
 ```
 
 ## Use ggplot theme_ja()
 
 ``` r
 library(tidyverse)
-#> ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-#> ✔ ggplot2 3.3.5     ✔ purrr   0.3.4
-#> ✔ tibble  3.1.8     ✔ dplyr   1.0.7
-#> ✔ tidyr   1.1.4     ✔ stringr 1.4.0
-#> ✔ readr   2.1.1     ✔ forcats 0.5.1
+#> ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+#> ✔ dplyr     1.1.4     ✔ readr     2.1.5
+#> ✔ forcats   1.0.0     ✔ stringr   1.5.1
+#> ✔ ggplot2   3.5.2     ✔ tibble    3.2.1
+#> ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+#> ✔ purrr     1.2.0     
 #> ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 #> ✖ dplyr::filter() masks stats::filter()
 #> ✖ dplyr::lag()    masks stats::lag()
+#> ℹ Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
 ggplot(iris) +
   geom_point(aes(x=Sepal.Length, y=Sepal.Width, color=Species), size=3) +
   ggtitle("Title here", subtitle = "Subtitle here") +
@@ -58,16 +61,14 @@ library(highcharter)
 #> Registered S3 method overwritten by 'quantmod':
 #>   method            from
 #>   as.zoo.data.frame zoo
-#> Highcharts (www.highcharts.com) is a Highsoft software product which is
-#> not free for commercial and Governmental use
-highcharter::hchart(iris, "scatter", hcaes(Sepal.Length, Sepal.Width, color=Species)) %>% 
-  hc_title(text = "Title here") %>% 
-  hc_subtitle(text = "Subtitle here.") %>% 
-  hc_caption(text = "<strong>Source</strong>: Source here.") %>% 
+highcharter::hchart(iris, "scatter", hcaes(Sepal.Length, Sepal.Width, color=Species)) %>%
+  hc_title(text = "Title here") %>%
+  hc_subtitle(text = "Subtitle here.") %>%
+  hc_caption(text = "<strong>Source</strong>: Source here.") %>%
   hc_add_theme(ja_hc_theme())
 ```
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="800" />
 
 ## Custom ja_colors
 
