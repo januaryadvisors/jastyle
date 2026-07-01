@@ -7,7 +7,9 @@
 theme_ja()
 }
 \description{
-This function allows you to add the January Advisors theme to your ggplot graphics.
+This function adds the January Advisors theme to your ggplot graphics.
+Requires the Onest font, which is registered automatically on package load
+via \code{sysfonts::font_add_google("Onest")} and \code{showtext::showtext_auto()}.
 }
 \examples{
 scatter <- ggplot(mtcars) +

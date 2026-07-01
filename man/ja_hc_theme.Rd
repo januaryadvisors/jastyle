@@ -6,7 +6,7 @@
 \usage{
 ja_hc_theme(
   base_size = "12px",
-  base_family = "Roboto Condensed",
+  base_family = "Onest, sans-serif",
   title_size = "22px",
   title_weight = "700",
   subtitle_size = "14px",
@@ -15,16 +15,20 @@ ja_hc_theme(
   header_align = "left",
   legend_align = "center",
   credits_align = "left",
-  chart_colors = c("#319CF4", "#FF8B00", "#081F30", "#13C18D", "#F4E649", "#C11344",
-    "#A71183"),
+  legend_position = "top",
+  chart_colors = c("#083563", "#035F84", "#058FB3", "#0DC0DC", "#69CCE3", "#F9E660",
+    "#FBD753", "#FCC747", "#FDB73B", "#FAA636", "#071C1E", "#0E2A2D", "#1F9144",
+    "#265C61", "#367CB3", "#469DA5", "#55B9C4", "#60CBD6", "#96F5FD", "#D8FCFE",
+    "#201403", "#352106", "#5133DD", "#744916", "#9C6220", "#CB8733", "#E9A54A",
+    "#F5C37C", "#F9DEB6", "#FDF3E5"),
   ...
 )
 }
 \description{
-This function allows you to add the January Advisors theme to your ggplot graphics.
+This function allows you to add the January Advisors theme to your highcharter graphics.
 }
 \examples{
-highcharter::hchart(iris, "scatter", hcaes(Sepal.Length, Sepal.Width, group=Species)) \%>\% 
+highcharter::hchart(iris, "scatter", hcaes(Sepal.Length, Sepal.Width, group=Species)) \%>\%
 hc_add_theme(ja_hc_theme())
 }
 \keyword{ja_hc_theme}
