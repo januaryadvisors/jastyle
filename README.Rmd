@@ -28,9 +28,9 @@ You can install the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("januaryadvisors/jastyle")
 ```
-## Check font
+## Font
 
-You need to have Roboto Condensed installed. Check your system to see if you do. If not, go here and download it [here](https://fonts.google.com/specimen/Roboto+Condensed).
+The package uses [Onest](https://fonts.google.com/specimen/Onest) as its base font. Onest is registered automatically on package load via `sysfonts::font_add_google("Onest")` and `showtext::showtext_auto()`, so no manual install is needed.
 ```{r check font}
 library(jastyle)
 ja_font()

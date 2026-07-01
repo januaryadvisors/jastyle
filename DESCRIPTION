@@ -1,7 +1,7 @@
 Package: jastyle
 Type: Package
 Title: January Advisors styles for R graphics
-Version: 0.1.0
+Version: 0.2.0
 Author: David McClendon
 Maintainer: David McClendon <david@januaryadvisors.com>
 Description: Style guide for ggplot graphics.
@@ -12,5 +12,7 @@ Suggests: testthat
 Imports:
   ggplot2,
   dplyr,
-  highcharter
-RoxygenNote: 7.1.1
+  highcharter,
+  showtext,
+  sysfonts
+RoxygenNote: 7.3.2
