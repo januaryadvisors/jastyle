@@ -71,26 +71,23 @@ ja_hex <- function(...) {
 
 #Define palettes here
 ja_palettes <- list(
-  `main`   = ja_cols("blue", "orange"),
+  `main`   = ja_cols("blue", "yellow"),
 
   `blues`  = ja_cols("blue1", "blue2", "blue3", "blue4", "blue5"),
 
   `warms`  = ja_cols("yellow1", "yellow2", "yellow3", "yellow4", "yellow5"),
 
-  `teals`  = ja_cols("teal1", "teal2", "teal3", "teal4", "teal5",
-                     "teal6", "teal7", "teal8", "teal9", "teal10"),
+  `teals`  = ja_cols("teal4", "teal6", "teal7", "teal8", "teal9"),
 
   `browns` = ja_cols("brown1", "brown2", "brown3", "brown4", "brown5",
                      "brown6", "brown7", "brown8", "brown9", "brown10"),
 
-  `mixed`  = ja_cols("blue1", "yellow5", "teal3", "brown6"),
+  `mixed`  = ja_cols("blue1", "yellow5", "teal3", "brown7"),
 
-  `full`   = ja_cols("blue1", "blue2", "blue3", "blue4", "blue5",
-                     "yellow1", "yellow2", "yellow3", "yellow4", "yellow5",
-                     "teal1", "teal2", "teal3", "teal4", "teal5",
-                     "teal6", "teal7", "teal8", "teal9", "teal10",
-                     "brown1", "brown2", "brown3", "brown4", "brown5",
-                     "brown6", "brown7", "brown8", "brown9", "brown10"),
+  `oranges` = ja_cols("brown8", "brown7", "yellow5", "brown6", "brown5"),
+
+  `discrete` = ja_cols("blue1", "yellow5", "teal3", "brown5",
+                       "teal6", "yellow1", "blue3", "brown7"),
 
   `political` = ja_cols("blue1", "brown6")
 )
@@ -101,7 +98,13 @@ ja_pal <- function(palette = "main", reverse = FALSE, ...) {
 
   if (reverse) pal <- rev(pal)
 
-  colorRampPalette(pal, ...)
+  function(n) {
+    if (n <= length(pal)) {
+      unname(pal[seq_len(n)])
+    } else {
+      colorRampPalette(pal, ...)(n)
+    }
+  }
 }
 
 
