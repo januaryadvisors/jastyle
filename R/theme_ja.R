@@ -16,7 +16,7 @@ theme_ja <- function() {
   ggplot2::theme_minimal() +
     ggplot2::theme(
       text                  = ggplot2::element_text(family = "Onest", colour = "#081F30", size = 14),
-      axis.title            = ggplot2::element_text(family = "Onest", face = "bold", colour = "#081F30", size = 16),
+      axis.title            = ggplot2::element_text(family = "Onest", face = "plain", colour = "#081F30", size = 12),
       axis.text             = ggplot2::element_text(family = "Onest", colour = "#081F30", size = 14),
       axis.text.x           = ggplot2::element_text(margin = ggplot2::margin(5, 0, 10, 0)),
       axis.ticks            = ggplot2::element_blank(),
@@ -30,9 +30,9 @@ theme_ja <- function() {
       panel.grid.major.x    = ggplot2::element_line(colour = "#cbcbcb", linewidth = 0.25),
       panel.grid.major.y    = ggplot2::element_line(colour = "#cbcbcb", linewidth = 0.25),
       plot.background       = ggplot2::element_rect(fill = "white", colour = NA),
-      plot.title            = ggplot2::element_text(family = "Onest", face = "bold", colour = "#081F30", size = 22),
+      plot.title            = ggplot2::element_text(family = "Onest", face = "plain", colour = "#081F30", size = 20),
       plot.title.position   = "plot",
-      plot.subtitle         = ggplot2::element_text(family = "Onest", size = 16, margin = ggplot2::margin(4, 0, 4, 0)),
+      plot.subtitle         = ggplot2::element_text(family = "Onest", size = 14, margin = ggplot2::margin(4, 0, 12, 0)),
       plot.caption          = ggplot2::element_text(family = "Onest", face = "italic", hjust = 0, size = 12),
       plot.caption.position = "plot",
       strip.background      = ggplot2::element_rect(fill = "white", colour = NA),
